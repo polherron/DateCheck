@@ -36,12 +36,12 @@ public class CalendarMain {
 	 * @param dateString
 	 * @return true if valid date
 	 */
-	private static boolean validateDate(String dateString) {
+	public static boolean validateDate(String dateString) {
 
 		if(dateString.length() != 10) {
 			return false;
 		}
-		else if((dateString.charAt(2) != '/') && (dateString.charAt(4) != '/')){
+		else if((dateString.charAt(2) != '/') && (dateString.charAt(5) != '/')){
 			return false;
 		}
 		else if (!checkDateInputsAreNumeric(dateString)){
@@ -69,7 +69,7 @@ public class CalendarMain {
 	 * Calculates the number of days for a month
 	 * @return number of days
 	 */
-	public static int getMaxMonthDays(int myMonth, int myYear) {
+	private static int getMaxMonthDays(int myMonth, int myYear) {
 		int monthLength = 31;
 		if(myMonth == 9 
 				|| myMonth == 4 
