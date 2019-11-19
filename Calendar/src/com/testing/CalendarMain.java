@@ -59,7 +59,7 @@ public class CalendarMain {
 			return false;
 		}
 		
-		if(day > getMaxMonthDays(month)){
+		if(day > getMaxMonthDays(month, year)){
 			return false;
 		}
 		return true;
@@ -69,7 +69,7 @@ public class CalendarMain {
 	 * Calculates the number of days for a month
 	 * @return number of days
 	 */
-	private static int getMaxMonthDays(int myMonth) {
+	public static int getMaxMonthDays(int myMonth, int myYear) {
 		int monthLength = 31;
 		if(myMonth == 9 
 				|| myMonth == 4 
@@ -78,7 +78,7 @@ public class CalendarMain {
 			monthLength = 30;
 		}
 		else if(myMonth == 2) {
-			if( leapYear(year)){
+			if( leapYear(myYear)){
 				monthLength = 29;
 			}
 			else {
